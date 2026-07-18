@@ -14,7 +14,14 @@ import { usePersistentState } from "@/app/components/usePersistentState";
 
 type Language = "en" | "ja" | "fr" | "zh";
 
-const publicAsset = (path: string) => new URL(path, document.baseURI).href;
+// GitHub Pages hosts this package below a repository subdirectory (`/shuizhi/`).
+// Build every public-image URL from the page directory so the same URL works on
+// both desktop and mobile browsers instead of incorrectly requesting `/images/*`.
+const publicAssetBase = new URL(
+  `${window.location.pathname.replace(/\/$/, "")}/`,
+  window.location.origin,
+);
+const publicAsset = (path: string) => new URL(path.replace(/^\//, ""), publicAssetBase).href;
 
 const heroFeatureLinks = [
   { href: "/main", icon: Droplet },
