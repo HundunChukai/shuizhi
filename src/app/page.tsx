@@ -14,6 +14,8 @@ import { usePersistentState } from "@/app/components/usePersistentState";
 
 type Language = "en" | "ja" | "fr" | "zh";
 
+const publicAsset = (path: string) => new URL(path, document.baseURI).href;
+
 const heroFeatureLinks = [
   { href: "/main", icon: Droplet },
   { href: "/main/alerts", icon: ShieldAlert },
@@ -29,34 +31,34 @@ const languageLabels: Record<Language, string> = {
 
 const oceanGalleryRows = [
   [
-    { src: "/images/home/oyster-open.png", alt: "水下张开的牡蛎" },
-    { src: "/images/home/scallop-open.png", alt: "水下张开的扇贝" },
-    { src: "/images/home/oyster-closed.png", alt: "水下闭合的牡蛎" },
-    { src: "/images/home/clam.png", alt: "水下闭合的蛤蜊" },
+    { src: publicAsset("images/home/oyster-open.png"), alt: "水下张开的牡蛎" },
+    { src: publicAsset("images/home/scallop-open.png"), alt: "水下张开的扇贝" },
+    { src: publicAsset("images/home/oyster-closed.png"), alt: "水下闭合的牡蛎" },
+    { src: publicAsset("images/home/clam.png"), alt: "水下闭合的蛤蜊" },
   ],
   [
-    { src: "/images/home/mussel.png", alt: "水下黑色贻贝" },
-    { src: "/images/home/shellfish-larvae.png", alt: "水中的贝类浮游幼体" },
-    { src: "/images/home/marine-fish.png", alt: "水下海水鱼" },
-    { src: "/images/home/abalone.png", alt: "水下鲍鱼" },
+    { src: publicAsset("images/home/mussel.png"), alt: "水下黑色贻贝" },
+    { src: publicAsset("images/home/shellfish-larvae.png"), alt: "水中的贝类浮游幼体" },
+    { src: publicAsset("images/home/marine-fish.png"), alt: "水下海水鱼" },
+    { src: publicAsset("images/home/abalone.png"), alt: "水下鲍鱼" },
   ],
 ] as const;
 
 const imageSets = [
   [
-    "/images/home/oyster-open.png",
-    "/images/home/scallop-open.png",
-    "/images/home/marine-fish.png",
+    publicAsset("images/home/oyster-open.png"),
+    publicAsset("images/home/scallop-open.png"),
+    publicAsset("images/home/marine-fish.png"),
   ],
   [
-    "/images/home/shellfish-larvae.png",
-    "/images/home/clam.png",
-    "/images/home/mussel.png",
+    publicAsset("images/home/shellfish-larvae.png"),
+    publicAsset("images/home/clam.png"),
+    publicAsset("images/home/mussel.png"),
   ],
   [
-    "/images/home/abalone.png",
-    "/images/home/oyster-closed.png",
-    "/images/home/project-glass-cube.png",
+    publicAsset("images/home/abalone.png"),
+    publicAsset("images/home/oyster-closed.png"),
+    publicAsset("images/home/project-glass-cube.png"),
   ],
 ];
 
@@ -363,10 +365,10 @@ function AboutSection({ copy }: { copy: Copy }) {
     reduceMotion ? ["0%", "0%"] : ["-3.5%", "3.5%"],
   );
   const ornaments = [
-    ["shell", "/images/home/project-shell.png", -70, 0.1],
-    ["water-drop", "/images/home/project-water-drop.png", 70, 0.18],
-    ["glass-cube", "/images/home/project-glass-cube.png", -70, 0.24],
-    ["arrow", "/images/home/project-arrow.png", 70, 0.3],
+    ["shell", publicAsset("images/home/project-shell.png"), -70, 0.1],
+    ["water-drop", publicAsset("images/home/project-water-drop.png"), 70, 0.18],
+    ["glass-cube", publicAsset("images/home/project-glass-cube.png"), -70, 0.24],
+    ["arrow", publicAsset("images/home/project-arrow.png"), 70, 0.3],
   ] as const;
 
   return (

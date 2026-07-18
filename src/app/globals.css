@@ -129,8 +129,8 @@ body > main:not(.jack-home) > nav::-webkit-scrollbar { display: none; }
 .contact-button:hover { transform: translateY(-3px); filter: brightness(1.12); }
 @keyframes water-shimmer { from { transform: rotate(-3deg) scale(1.15) translate3d(-1%, -2%, 0); } to { transform: rotate(3deg) scale(1.25) translate3d(2%, 3%, 0); } }
 
-.ocean-gallery { position: relative; isolation: isolate; padding: clamp(3.5rem,6vw,5.5rem) 0 clamp(4.5rem,8vw,7rem); overflow: hidden; color: #082e59; background: #075b90; }
-.ocean-gallery-scroll-background { z-index: -3; background: radial-gradient(circle at 12% 28%, rgba(255,255,255,.46) 0 6%, transparent 30%), radial-gradient(circle at 86% 34%, rgba(255,255,255,.38), transparent 28%), linear-gradient(180deg, #07547f 0%, #43a8cf 22%, #9bdef2 55%, #4aa8ce 78%, #075b90 100%); }
+.ocean-gallery { position: relative; isolation: isolate; margin-top: -2px; padding: clamp(3.5rem,6vw,5.5rem) 0 clamp(4.5rem,8vw,7rem); overflow: hidden; color: #082e59; background: #075b90; }
+.ocean-gallery-scroll-background { z-index: -3; background: radial-gradient(circle at 12% 30%, rgba(255,255,255,.46) 0 6%, transparent 30%), radial-gradient(circle at 86% 36%, rgba(255,255,255,.38), transparent 28%), linear-gradient(180deg, #07547f 0%, #07547f 9%, #43a8cf 28%, #9bdef2 57%, #4aa8ce 80%, #075b90 100%); }
 .ocean-gallery::before { content: ""; position: absolute; z-index: -2; inset: 0; opacity: .54; background: repeating-radial-gradient(circle at 15% 24%, transparent 0 22px, rgba(255,255,255,.45) 23px 25px, transparent 26px 54px); mask-image: linear-gradient(90deg, #000, transparent 36%); }
 .ocean-gallery::after { content: ""; position: absolute; z-index: -1; inset: auto -8% 0 -8%; height: 34%; background: radial-gradient(ellipse at 50% 18%, rgba(238,253,255,.34), rgba(34,161,214,.12) 42%, transparent 68%), linear-gradient(180deg, transparent, #075b90 100%); }
 .ocean-gallery-glow { position: absolute; z-index: -1; inset: 0; pointer-events: none; background: linear-gradient(112deg, transparent 16%, rgba(255,255,255,.54) 34%, transparent 48%), radial-gradient(circle at 94% 35%, rgba(255,255,255,.8) 0 4px, transparent 5px), radial-gradient(circle at 91% 28%, rgba(255,255,255,.6) 0 7px, transparent 8px); }
@@ -144,6 +144,7 @@ body > main:not(.jack-home) > nav::-webkit-scrollbar { display: none; }
 .project-about { isolation: isolate; min-height: clamp(700px,100vh,940px); color: #eefbff; background: #075b90; }
 .project-about-scroll-background { z-index: -3; background: linear-gradient(180deg,rgba(7,91,144,.94) 0%,rgba(4,75,126,.42) 14%,rgba(0,24,70,.25) 38%,rgba(0,55,122,.12) 100%), url('/system-ocean-data-v2.webp') center / cover no-repeat, linear-gradient(145deg,#075b90,#075fa5 52%,#0a83c0); }
 .project-about::before { content: ""; position: absolute; z-index: -1; inset: 0; background: radial-gradient(circle at 50% 32%,rgba(34,194,255,.28),transparent 36%), linear-gradient(180deg,#075b90 0%,transparent 16%,transparent 80%,rgba(6,101,160,.88) 100%), linear-gradient(90deg,rgba(1,24,66,.24),transparent 28%,transparent 72%,rgba(1,24,66,.2)); }
+.project-about::after { content: ""; position: absolute; z-index: 0; right: 0; bottom: 0; left: 0; height: clamp(7rem, 18vh, 12rem); pointer-events: none; background: linear-gradient(180deg, rgba(6,101,160,0), rgba(6,101,160,.72) 58%, #0665a0 100%); }
 .project-about-rays { position: absolute; z-index: -1; inset: 0; pointer-events: none; opacity: .72; background: conic-gradient(from 166deg at 50% -15%,transparent 0 40%,rgba(161,235,255,.14) 43%,transparent 46% 51%,rgba(138,230,255,.18) 54%,transparent 58%); filter: blur(3px); }
 .project-about-content { position: relative; z-index: 4; width: min(92%, 920px); display: flex; flex-direction: column; align-items: center; gap: clamp(2rem,4vw,3rem); text-align: center; }
 .project-about-content h2 { background: linear-gradient(180deg,#fff 10%,#d8f7ff 64%,#8ee7ff); background-clip: text; -webkit-background-clip: text; color: transparent; filter: drop-shadow(0 10px 28px rgba(0,167,235,.3)); font-size: clamp(3rem,8vw,7.4rem); font-weight: 900; line-height: .95; letter-spacing: -.045em; }
@@ -158,8 +159,9 @@ body > main:not(.jack-home) > nav::-webkit-scrollbar { display: none; }
 .project-ornament-arrow { width: clamp(145px,19vw,270px); right: 2%; bottom: 2%; }
 .section-title { font-size: clamp(3rem,12vw,160px); font-weight: 900; line-height: .9; letter-spacing: -.055em; text-align: center; text-transform: uppercase; }
 
-.services { position: relative; z-index: 5; isolation: isolate; overflow: hidden; border-radius: 40px 40px 0 0; padding: 7rem 1.25rem 8.5rem; background: url('/images/service-background.webp') center top / cover no-repeat; color: #f5fcff; }
+.services { position: relative; z-index: 5; isolation: isolate; margin-top: -2px; overflow: hidden; border-radius: 0; padding: 7rem 1.25rem 8.5rem; background: url('/images/service-background.webp') center top / cover no-repeat; color: #f5fcff; }
 .services::before { position: absolute; z-index: -1; inset: 0; content: ""; pointer-events: none; background: linear-gradient(180deg, rgba(0,98,157,.1) 0%, rgba(0,73,137,.24) 42%, rgba(0,52,111,.38) 100%); }
+.services::after { position: absolute; z-index: 0; top: 0; right: 0; left: 0; height: clamp(7rem, 18vh, 12rem); content: ""; pointer-events: none; background: linear-gradient(180deg, #0665a0 0%, rgba(6,101,160,.72) 42%, rgba(6,101,160,0) 100%); }
 .services > * { position: relative; z-index: 1; }
 .dark-title { margin-bottom: 4rem; color: #f8fdff; text-shadow: 0 10px 28px rgba(0, 47, 76, .24); }
 .services-list { max-width: 1024px; margin: 0 auto; border-top: 1px solid rgba(224, 248, 252, .36); }
@@ -195,7 +197,7 @@ footer { max-width: 1400px; margin: 4rem auto 0; padding-top: 1.5rem; border-top
   .hero-bottom { padding-bottom: 2rem; }
   .contact-button { padding: .875rem 2.5rem; font-size: .875rem; }
   .about, .services { padding-left: 2rem; padding-right: 2rem; }
-  .services { border-radius: 50px 50px 0 0; padding-top: 8rem; padding-bottom: 10rem; }
+  .services { padding-top: 8rem; padding-bottom: 10rem; }
   .dark-title { margin-bottom: 5rem; }
   .service-item { padding: 2.5rem 0; }
   .projects { margin-top: -3rem; border-radius: 50px 50px 0 0; padding-left: 2rem; padding-right: 2rem; }
@@ -209,7 +211,7 @@ footer { max-width: 1400px; margin: 4rem auto 0; padding-top: 1.5rem; border-top
   .hero-bottom { padding-bottom: 2.5rem; }
   .contact-button { padding: 1rem 3rem; font-size: 1rem; }
   .about, .services { padding-left: 2.5rem; padding-right: 2.5rem; }
-  .services { border-radius: 60px 60px 0 0; padding-top: 10rem; padding-bottom: 12rem; }
+  .services { padding-top: 10rem; padding-bottom: 12rem; }
   .dark-title { margin-bottom: 7rem; }
   .service-item { padding: 3rem 0; }
   .projects { margin-top: -3.5rem; border-radius: 60px 60px 0 0; padding: 9rem 2.5rem 2rem; }
